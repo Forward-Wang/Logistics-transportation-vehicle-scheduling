@@ -20,11 +20,12 @@ GOC 城市物流运输车辆智能调度
 - 充电站的充电桩无限制，车辆需要在可持续里程到达前在充电站充电，车辆一次充满，每次充电时间恒定为0.5h； 
 - 等待成本的成本系数为24元/h；
 
-​	本问题属于运筹优化中VRP问题(Vehicle Routing Problem)，具体来看是GVRP(Green VRP)问题。
+   本问题属于运筹优化中VRP问题(Vehicle Routing Problem)，具体来看是GVRP(Green VRP)问题。
 
-​	首先分析问题，进行数学建模。本算题GVRP的绿色考虑了电车的多循环和充电问题。**综合成本是运输成本，等待成本，充电成本和固定成本的总和**，即为目标函数。对于约束条件，这里有VRP中常见的最大容量约束(CVRP)、时间窗口约束(VRPTW)、混合车辆约束(Heterogeneous Fleet VRP)、多循环约束(Multi-trip VRP)、带充电站的电车里程约束(Electric VRP with Recharging Stations)。
+   首先分析问题，进行数学建模。本算题GVRP的绿色考虑了电车的多循环和充电问题。**综合成本是运输成本，等待成本，充电成本和固定成本的总和**，即为目标函数。对于约束条件，这里有VRP中常见的最大容量约束(CVRP)、时间窗口约束(VRPTW)、混合车辆约束(Heterogeneous Fleet VRP)、多循环约束(Multi-trip VRP)、带充电站的电车里程约束(Electric VRP with Recharging Stations)。
 
-​	
+
+   ​	
 
 | 综合成本 (total cost)          |                                                |
 | ------------------------------ | ---------------------------------------------- |
@@ -51,5 +52,6 @@ GOC 城市物流运输车辆智能调度
 
 ​	至此，建模完成，接下来调用求解工具或者设计算法(如metaheuristic)去求解问题了。目标中考虑了等待成本，这也说明了，车辆在途的等待是可以的，但要花成本，因此，这不仅是个路径规划问题，时间的合理安排也能减少成本。  
 
-$$ min{total cost} = min{fixed cost+transportation cost+waiting cost+charging cost} $$ 
+$$  total\_cost = fixed\_cost+transportation\_cost+waiting\_cost+charging\_cost $$ 
 
+$$ min{total cost} = min{fixed cost+transportation cost+waiting cost+charging cost} $$ 
