@@ -55,3 +55,5 @@ GOC 城市物流运输车辆智能调度
 $$  total\_cost = fixed\_cost+transportation\_cost+waiting\_cost+charging\_cost $$ 
 
 $$ min{total cost} = min{fixed cost+transportation cost+waiting cost+charging cost} $$ 
+
+- 首先要确定数据结构	
